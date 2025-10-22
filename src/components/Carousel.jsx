@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ProductsContext } from "../context/ProductsContext";
+import { getData } from "../context/ProductsContext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const Carousel = () => {
-  const { data } = useContext(ProductsContext);
+  const { data } = getData();
   var settings = {
     dots: false,
     infinite: true,
@@ -19,7 +18,7 @@ const Carousel = () => {
     <div>
       <Slider {...settings}>
         {data?.slice(0, 7)?.map((item, idx) => (
-          <div>
+          <div key={idx}>
             <h3>{item.title}</h3>
           </div>
         ))}

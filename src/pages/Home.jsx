@@ -1,13 +1,13 @@
 import React from 'react'
 import Carousel from '../components/Carousel'
-import { ProductsProvider } from '../context/ProductsContext'
+import Category from '../components/Category'
 
 const Home = () => {
   return (
     <>
-      <ProductsProvider>
         <Carousel />
-      </ProductsProvider>
+        <br/>
+        <Category />
     </>
   )
 }

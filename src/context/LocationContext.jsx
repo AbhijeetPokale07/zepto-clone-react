@@ -21,7 +21,7 @@ export const LocationProvider = ({ children }) => {
       const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
       // const url1 =`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
       const { data } = await axios.get(url);
-      console.log(data);
+      // console.log(data);
       setLocation(data.address);
     } catch (error) {
       console.error("Error getting location:", error);

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const ProductsContext = createContext();
 
@@ -17,8 +17,7 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     fetchProducts();
-    console.log(data);
-    
+    // console.log(data);
   }, []);
 
   return (
@@ -27,3 +26,5 @@ export const ProductsProvider = ({ children }) => {
     </ProductsContext.Provider>
   );
 };
+
+export const getData = () => useContext(ProductsContext)
